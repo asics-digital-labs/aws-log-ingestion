@@ -527,7 +527,7 @@ def _package_log_payload(data):
                         "logGroup": entry["logGroup"],
                     },
                     "service_name": entry["logGroup"],
-                    "hostname": entry["logStream"].split("/")[-1],
+                    "hostname": entry["logStream"].split("/")[-1].split("]")[-1],
                 }
             },
             "logs": log_messages,
